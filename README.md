@@ -9,7 +9,7 @@ https://access.redhat.com/solutions/2837871
 
 The code here should work for:
 
-# rpm -qi openstack-neutron-lbaas  
+$ rpm -qi openstack-neutron-lbaas  
 Name        : openstack-neutron-lbaas  
 Epoch       : 1  
 Version     : 9.1.0  
