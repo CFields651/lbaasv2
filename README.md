@@ -15,3 +15,4 @@ Epoch       : 1
 Version     : 9.1.0  
 Release     : 4.el7ost  
 
+This presumes that the haproxy service is installed and running.  
