@@ -17,10 +17,10 @@ Release     : 4.el7ost
 
 This presumes that the haproxy service is installed and running.  
 
-When you start the neutron-server servive it logs this warning:  
+When you start the neutron-server servive it logs this warning in /var/log/neutron/server.log:  
 WARNING stevedore.named [-] Could not load neutron_lbaas.drivers.haproxy.plugin_driver.HaproxyOnHostPluginDriver   
 
-When you start the neutron-lbaasv2-agent it logs these warnings:  
+When you start the neutron-lbaasv2-agent it logs these warnings in /var/log/neutron/lbaas-agent.log:    
 WARNING stevedore.named Could not load neutron.agent.linux.interface.OVSInterfaceDriver  
 WARNING stevedore.named Could not load neutron_lbaas.drivers.haproxy.namespace_driver.HaproxyNSDriver  
 
