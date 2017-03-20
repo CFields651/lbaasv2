@@ -1,5 +1,4 @@
-#match="overcloud-controller"
-match="localhost"
+match="overcloud-controller"
 if echo $(hostname) | grep -q ^$match; then 
   echo "$(hostname) macthes $match so installing lbaasv2" 
 else 
