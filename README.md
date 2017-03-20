@@ -1,4 +1,14 @@
 # lbaasv2
+lbaasv2.sh - shell script for installing lbaav2 on Red Hat OSP 10  
+post_config.yaml - resource registry for installing through Director OS::TripleO::NodeExtraConfigPost  
+lbaasv2.yaml - heat template with bash code from from lbaasv2.sh called by post_config.yaml  
+
+To install through OSP Director modify the 'match' variable to match your controller/network nodes.  
+Add this to your deployment:  
+
+openstack overcloud deploy --templates -e <path to>/post_config.yaml  
+
+##details
 The documentation for Red Hat OpenStack Platform 10 is not very accurate for installing lbaasv2:
 
 https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/10/html/networking_guide/sec-lbaas    
