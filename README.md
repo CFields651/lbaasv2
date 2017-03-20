@@ -8,7 +8,7 @@ Add this to your deployment:
 
 openstack overcloud deploy --templates -e <path to>/post_config.yaml  
 
-##details
+## details
 The documentation for Red Hat OpenStack Platform 10 is not very accurate for installing lbaasv2:
 
 https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/10/html/networking_guide/sec-lbaas    
