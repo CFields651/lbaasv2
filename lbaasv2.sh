@@ -1,3 +1,12 @@
+#match="overcloud-controller"
+match="localhost"
+if echo $(hostname) | grep -q ^$match; then 
+  echo "$(hostname) macthes $match so installing lbaasv2" 
+else 
+  echo "hostname $(hostname) does not match $match so exiting"
+  exit 0
+fi
+
 #where neutron-server is running
 yum install openstack-neutron-lbaas
 
@@ -17,7 +26,6 @@ crudini --set /etc/neutron/lbaas_agent.ini DEFAULT user_group haproxy
 crudini --set /etc/neutron/lbaas_agent.ini DEFAULT interface_driver neutron.agent.linux.interface.OVSInterfaceDriver
 crudini --set /etc/neutron/lbaas_agent.ini DEFAULT device_driver neutron_lbaas.drivers.haproxy.namespace_driver.HaproxyNSDriver
 systemctl restart neutron-lbaasv2-agent.service
-
 
 #where neutron-server is running
 echo "neutron_lbaas.conf service_provider=$(crudini --get /etc/neutron/neutron_lbaas.conf service_providers service_provider)"
