@@ -6,7 +6,7 @@ lbaasv2.yaml - heat template with bash code from from lbaasv2.sh called by post_
 To install through OSP Director modify the 'match' variable to match your controller/network nodes.  
 Add this to your deployment:  
 
-openstack overcloud deploy --templates -e <path to>/post_config.yaml  
+openstack overcloud deploy --templates -e \<path to\>/post_config.yaml  
 
 ## details
 The documentation for Red Hat OpenStack Platform 10 is not very accurate for installing lbaasv2:
