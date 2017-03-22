@@ -1,10 +1,12 @@
 heat_template_version: 2014-10-16
 
 description: >
-  Extra lbaasv2 configuration
+  Post Lbaasv2 configuration
 
 parameters:
   servers:
+    type: json
+  input_values:
     type: json
 
 resources:
@@ -14,13 +16,6 @@ resources:
       group: script
       config: |
         #!/bin/sh
-        match="overcloud-controller"
-        if echo $(hostname) | grep -q ^$match; then 
-          echo "$(hostname) macthes $match so installing lbaasv2" > /tmp/lbaasv2.out
-        else 
-          echo "hostname $(hostname) does not match $match so exiting" > /tmp/lbaasv2.out
-          exit 0
-        fi
         
         #where neutron-server is running
         yum install openstack-neutron-lbaas
@@ -63,6 +58,7 @@ resources:
     type: OS::Heat::SoftwareDeploymentGroup
     properties:
       name: ExtraDeploymentsLbaasv2
-      servers: {get_param: servers}
+      servers: {get_param: [servers, 'Controller']}
       config: {get_resource: ExtraConfigLbaasv2}
+      input_values: {get_param: input_values}
       actions: ['CREATE','UPDATE']

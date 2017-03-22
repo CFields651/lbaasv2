@@ -1,2 +1,2 @@
 resource_registry:
-  OS::TripleO::NodeExtraConfigPost: /home/stack/templates/lbaasv2.yaml
+  OS::TripleO::Tasks::ControllerPostConfig: /home/stack/templates/lbaasv2.yaml
