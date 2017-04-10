@@ -1,4 +1,4 @@
-# osp_lbaasv2
+# osp_lbaasv2_install
 lbaasv2.sh - shell script for installing lbaav2 on Red Hat OSP 10  
 post_config.yaml - resource registry for installing through Director OS::TripleO::NodeExtraConfigPost  
 lbaasv2.yaml - heat template with bash code from from lbaasv2.sh called by post_config.yaml  
