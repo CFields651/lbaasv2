@@ -11,13 +11,9 @@ openstack overcloud deploy --templates -e \<path to\>/post_config.yaml
 Be sure to check out the lbaasv2 directory of https://github.com/CFields651/osp_tempest-tools to test your lbaasv2 installation with tempest.  
 
 ## details
-The documentation for Red Hat OpenStack Platform 10 is not very accurate for installing lbaasv2:
+This installaton is based on documentation for Red Hat OpenStack Platform 10 located here:
 
 https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/10/html/networking_guide/sec-lbaas    
-
-This kbase is closer, but the correction the author identified is no longer needed in the current release:  
-
-https://access.redhat.com/solutions/2837871  
 
 The code in this repo should work for:  
 
